@@ -169,7 +169,7 @@ angular.module("hvvvyApp").controller("ChartCtrl", ["$scope", "dataResource", fu
   }
 
   $scope.movements = [];
-  $scope.selectedMovement = void 0;
+  $scope.selectedMovement = undefined;
   $scope.intensity = {
     tooltip: {
       enabled: !1,
@@ -188,10 +188,12 @@ angular.module("hvvvyApp").controller("ChartCtrl", ["$scope", "dataResource", fu
     $scope.chartData = [];
 
     angular.forEach($scope.data, function(c) {
-      if (c.type === $scope.selectedMovement && "string" == typeof c.value) {
-        c.value = dataResource.parseData(c.value);
+      if (c.type === $scope.selectedMovement) {
+        if ('string' == typeof c.value) {
+          c.value = dataResource.parseData(c.value);
+        }
         $scope.chartData.push(c);
-      }
+      }      
     });
       
     c();
@@ -199,17 +201,21 @@ angular.module("hvvvyApp").controller("ChartCtrl", ["$scope", "dataResource", fu
     e();
   };
 
-  $scope.current = -1;
-
-  $scope.inc = function(b) {
-    1 === b ? $scope.current++ : $scope.current--;
-    $scope.current = -1 == $scope.current ? $scope.totalMovements - 1 : $scope.current % $scope.totalMovements;
-    $scope.selectedMovement = $scope.movements[$scope.current];
+  var current = -1;
+  $scope.inc = function(b) {    
+  
+    1 === b ? current++ : current-- ; 
+    
+    current = -1 === current ? $scope.totalMovements - 1 : current % $scope.totalMovements;    
+    
+    $scope.selectedMovement = $scope.movements[current];  
     $scope.getChartData();
   };
 
   $scope.setSelected = function(b) {
-    $scope.selectedMovement = b, $scope.current = $scope.movements.indexOf(b), $scope.getChartData()
+    $scope.selectedMovement = b;
+    current = $scope.movements.indexOf(b);
+    $scope.getChartData();
   }
 
   $scope.chartConfig = {
