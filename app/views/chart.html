@@ -1,0 +1,32 @@
+<div class="col-sm-10 col-sm-offset-1 chart">
+  <!-- movement -->
+  <p class="input-group search">
+    <button class="form-control" ng-click="inc(-1)"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></button>
+    <input type="text" ng-model="selectedMovement" typeahead="m for m in movements | filter:$viewValue | limitTo:5" typeahead-on-select="setSelected($item)" class="form-control">
+    <button class="form-control" ng-click="inc(1)"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
+  </p>
+  <div ng-show="selectedMovement !== undefined">
+    <highchart id="chart1" config="chartConfig"></highchart>
+    <div class="row">
+      <div class="col-sm-2 col-sm-offset-3" ng-if="rmax > 0">
+        <h3>1RM <span class="label label-default">{{rmax | number}}</span></h3> </div>
+      <div class="col-sm-2" ng-if="totalWeight > 0">
+        <h3>Total weight <span class="label label-default">{{totalWeight | number}}</span></h3> </div>
+      <div class="col-sm-2" ng-if="totalReps > 0">
+        <h3>Total reps <span class="label label-default">{{totalReps | number}}</span></h3> </div>
+    </div>
+  </div>
+</div>
+<!--
+
+line - avg per session
+line - total per session
+line - reps per session
+heaviest set
+calc 1rm
+total moved
+total reps
+
+movement distribution
+
+-->

@@ -1,0 +1,16 @@
+.date-picker {
+  .form-control {
+    max-width: none;
+    width: auto;
+  }
+  .input-group-btn {
+    display: inline;
+  }
+  .dropdown-menu {
+    padding: 5px;
+    .btn {
+      border: none;
+      border-radius: 0;
+    }
+  }
+}

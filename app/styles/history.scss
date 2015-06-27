@@ -1,0 +1,30 @@
+.history {
+  h3, h4 {
+    color: #777;
+  }
+  h3 {
+    margin-top: 0;
+  }
+  .slick-slider {
+    margin: 0 -15px 30px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 30px;
+  }
+  .slick-prev,
+  .slick-next {
+    top: 20%;
+    &::before {
+      content: '\e079';
+      color: #777;
+      font-family: 'Glyphicons Halflings';
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  }
+  .slick-next::before {
+    content: '\e080';
+  }
+}

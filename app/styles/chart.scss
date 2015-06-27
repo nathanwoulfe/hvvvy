@@ -1,0 +1,24 @@
+.chart {
+  h3 {
+    text-align: center;
+    background: #ddd;
+    padding-top: 5px;
+    border-radius: 4px;
+    color: #777;
+  }
+  .label {
+    margin-top: 5px;
+    display: block;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    color: #ddd;
+  }
+  .input-group {
+    .form-control {
+      width: auto;
+    }
+    input {
+      margin: 0 -1px;
+    }
+  }
+}

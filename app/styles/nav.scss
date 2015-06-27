@@ -1,0 +1,25 @@
+.navbar-default {
+  border:none;
+  background-color:transparent;
+  
+  .navbar-brand {
+    background: #777;
+    color: #ddd;
+    transition: all .2s ease-in-out;
+    
+    &:hover {
+      color:#fff;
+      background:#ddd;
+    }
+  }
+  
+  .navbar-nav a {
+    border-bottom:4px solid #fff;
+    transition:all .2s ease-in-out;
+    
+    &:hover {
+      color:#777;
+      border-bottom:4px solid #777;
+    }
+  }
+}

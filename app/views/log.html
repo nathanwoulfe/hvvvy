@@ -1,0 +1,27 @@
+<div class="col-sm-4 col-sm-offset-4">
+  <!-- date -->
+  <p class="input-group date-picker">
+    <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="date" is-open="opened" datepicker-options="dateOptions" ng-required="true" close-text="Close"> <span class="input-group-btn"> <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button> </span> </p>
+  <!--
+    <p class="input-group">
+      <button type="button" class="btn btn-sm btn-info" ng-click="today()">Today</button>
+      <button type="button" class="btn btn-sm btn-danger" ng-click="clear()">Clear</button>
+    </p>
+-->
+  <!-- movement -->
+  <p class="input-group">
+    <input type="text" ng-model="selectedMovement" typeahead="m for m in movements | filter:$viewValue | limitTo:5" class="form-control"> </p>
+  <p class="input-group" ng-repeat="w in work">
+    <input type="text" class="form-control" ng-model="w.sets"> <span class="input-group-addon">sets of</span>
+    <input type="text" class="form-control" ng-model="w.reps"> <span class="input-group-addon">reps at</span>
+    <input type="text" class="form-control" ng-model="w.weight"> <span class="input-group-addon">{{units}}</span> </p>
+  <button class="btn btn-info" ng-click="addWork()">+</button>
+  <button class="btn btn-info" ng-if="work.length > 1" ng-click="removeWork()">-</button>
+  <p class="input-group">
+    <textarea class="form-control" rows="5" ng-model="notes">
+
+    </textarea>
+  </p>
+  <button class="btn btn-lg btn-success" ng-click="save()">save</button>
+</div>
+<alert ng-repeat="alert in alerts" type="{{alert.type}}">{{alert.msg}}</alert>

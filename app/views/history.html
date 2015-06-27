@@ -1,0 +1,14 @@
+<div class="col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 history">
+  <div ng-repeat="d in pagedData">
+    <h3>{{d.date | date : 'd MMMM yyyy' }}</h3>
+    <slick infinite="true" slides-to-show="3" slides-to-scroll="1">
+      <div class="col-sm-4" ng-repeat="v in d.values">
+        <h4>{{v.type}}</h4>
+        <ul class="list-unstyled">
+          <li ng-repeat="val in v.value"> {{val.s}} {{sets(val.s)}} of {{val.r}} {{reps(val.r)}} at {{val.w}} </li>
+        </ul>
+      </div>
+    </slick>
+  </div>
+  <pagination direction-links="false" items-per-page="pageSize" boundary-links="true" total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()"></pagination>
+</div>

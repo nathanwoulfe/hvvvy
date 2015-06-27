@@ -1,0 +1,28 @@
+{
+  "name": "hvvvy",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "minimum_chrome_version": "29",
+  "oauth2": {
+    "client_id": "707493109662-r5nj0nk8hjuk8q6un8opn2m603ml65tn.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/drive"
+    ]
+  },
+  "icons": {
+    "128": "favicon.ico"
+  },
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA2J+J4o7XqbYdCT0idpoCY5dqgYrrhzvb9XuXE9LWph0nXm5THTr0qnM9hn2h/7J38kZzsfX4BxoZEVn+AXxozZ6Ef+FtjPD7LunOOxh8a5BzbiUUixFKYwwUnHHVwU+MkFJRXEpNRJONe8cwQI/MoeMalQ1KN5/uUz208U35ZfPiwsS7f+q4i8axlLItrqsLbOxK90UNFWHBkM/y2gpmq1aSYIs56CiNT+OE5YIxpn8bZBU8ryorPDhmtOTGzXd6f4VW3XPv5O8GtQVypnNUMH/L4xmA5+86ulyb3luBu2p7LrWIgvmOOrz0XAi5lO4k7wywtZgeRuNGWjGXb9lxLwIDAQAB",
+  "app": {
+    "background": {
+      "scripts": ["background.js"]
+    }
+  },
+  "permissions": [
+    "identity",
+    "fullscreen",
+    "https://ssl.gstatic.com/",
+    "https://www.googleapis.com/",
+    "https://accounts.google.com/"
+  ]
+}
